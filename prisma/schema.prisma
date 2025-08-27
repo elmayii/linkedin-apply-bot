@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model LinkedInAuth {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  li_at     String   // Cookie de autenticación de LinkedIn
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  expiresAt DateTime? // Fecha de expiración de la cookie (opcional)
+  isActive  Boolean  @default(true)
+
+  @@map("linkedin_auth")
+}
+
+model JobApplication {
+  id          String   @id @default(cuid())
+  jobTitle    String
+  companyName String
+  jobUrl      String   @unique
+  appliedAt   DateTime @default(now())
+  status      String   @default("applied") // applied, error, skipped
+  userEmail   String
+  
+  @@map("job_applications")
+}

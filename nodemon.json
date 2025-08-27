@@ -1,0 +1,32 @@
+{
+  "watch": [
+    "scripts/",
+    "apply/",
+    "apply-form/",
+    "fetch/",
+    "login/",
+    "selectors/",
+    "utils/",
+    "config.ts"
+  ],
+  "ext": "ts",
+  "ignore": [
+    "node_modules/",
+    ".git/",
+    "*.log",
+    ".ts-node/",
+    "*.d.ts"
+  ],
+  "delay": 2000,
+  "verbose": true,
+  "restartable": "rs",
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "events": {
+    "start": "echo '🚀 Iniciando LinkedIn Bot en modo desarrollo...'",
+    "restart": "echo '🔄 Reiniciando bot debido a cambios en archivos...'",
+    "crash": "echo '💥 El bot se cerró inesperadamente. Reiniciando en 3s...'",
+    "exit": "echo '👋 Saliendo del modo desarrollo...'"
+  }
+}
