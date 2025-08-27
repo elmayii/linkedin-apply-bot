@@ -1,0 +1,47 @@
+# LinkedIn Easy Apply Bot - Code Owners
+# This file defines who owns different parts of the codebase
+# and who must review changes before they can be merged.
+
+# Global ownership - All files require review from @elmayii
+* @elmayii
+
+# Core application logic - Critical components
+/apply/ @elmayii
+/apply-form/ @elmayii
+/scripts/ @elmayii
+
+# Authentication and security - High security components
+/login/ @elmayii
+/auth/ @elmayii
+/utils/authService.ts @elmayii
+/utils/database.ts @elmayii
+
+# Configuration files - Sensitive configuration
+config.example.ts @elmayii
+.env.example @elmayii
+package.json @elmayii
+tsconfig.json @elmayii
+
+# LinkedIn selectors - Frequently changing components
+/selectors/ @elmayii
+
+# Job fetching logic - Core functionality
+/fetch/ @elmayii
+
+# Documentation - Important for project maintenance
+README.md @elmayii
+*.md @elmayii
+
+# GitHub configuration - Repository settings
+/.github/ @elmayii
+
+# Database schema - Critical infrastructure
+/prisma/ @elmayii
+
+# Build and deployment configuration
+package*.json @elmayii
+nodemon.json @elmayii
+.gitignore @elmayii
+
+# AI integration - Optional but important features
+/apply-form/ai/ @elmayii
